@@ -49,6 +49,7 @@ function startRecording() {
 
 function stopRecording() {
   if (!mediaRecorder) return;
+  if (mediaRecorder.state === "inactive") return;
 
   mediaRecorder.stop();
   console.log(mediaRecorder.state);
